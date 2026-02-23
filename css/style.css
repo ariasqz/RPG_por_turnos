@@ -1,0 +1,52 @@
+body {
+    background: #1a1a2e;
+    color: #eee;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#game {
+    background: #16213e;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    width: 400px;
+}
+
+.status {
+    background: #0f3460;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+#log {
+    margin: 15px 0;
+    min-height: 60px;
+    font-size: 14px;
+    color: #a8d8ea;
+}
+
+button {
+    background: #e94560;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #c73652;
+}
+
+button:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
