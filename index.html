@@ -1,18 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>RPG por Turnos</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
+
     <div id="game">
-        <h1>⚔️ RPG por Turnos</h1>
-        <div class="status" id="hero-status">Héroe</div>
-        <div class="status" id="enemy-status">Enemigo</div>
-        <div id="log">¡La batalla está por comenzar!</div>
-        <button id="attack-btn">⚔️ Atacar</button>
+        <h1>RPG POR TURNOS</h1>
+        <p class="subtitle">Demuestra tu valor en combate</p>
+
+        <div class="enemy-selector">
+            <h3>ELEGIR ENEMIGO</h3>
+            <div class="enemy-list" id="enemy-list"></div>
+        </div>
+
+        <div class="battlefield">
+
+            <div class="combatant hero-panel" id="hero-panel">
+                <div class="level-badge" id="hero-level-badge">Nv 1</div>
+                <div class="combatant-name" id="hero-name">Gandalf</div>
+
+                <div class="stat-bar-wrap">
+                    <div class="stat-label">
+                        <span>HP</span>
+                        <span id="hero-hp-text">100/100</span>
+                    </div>
+                    <div class="bar-track">
+                        <div class="bar-fill hp-fill" id="hero-hp-bar" style="width:100%"></div>
+                    </div>
+                </div>
+
+                <div class="stat-bar-wrap">
+                    <div class="stat-label">
+                        <span>Mana</span>
+                        <span id="hero-mana-text">50/50</span>
+                    </div>
+                    <div class="bar-track">
+                        <div class="bar-fill mana-fill" id="hero-mana-bar" style="width:100%"></div>
+                    </div>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat-item">ATK <span id="hero-atk">30</span></div>
+                    <div class="stat-item">DEF <span id="hero-def">10</span></div>
+                    <div class="stat-item">XP <span id="hero-xp">0/30</span></div>
+                </div>
+            </div>
+
+            <div class="vs-divider">VS</div>
+
+            <div class="combatant enemy-panel" id="enemy-panel">
+                <div class="combatant-name" id="enemy-name">Goblin</div>
+
+                <div class="stat-bar-wrap">
+                    <div class="stat-label">
+                        <span>HP</span>
+                        <span id="enemy-hp-text">40/40</span>
+                    </div>
+                    <div class="bar-track">
+                        <div class="bar-fill hp-fill" id="enemy-hp-bar" style="width:100%"></div>
+                    </div>
+                </div>
+
+                <div class="stats-row" style="margin-top:4px;">
+                    <div class="stat-item">ATK <span id="enemy-atk">15</span></div>
+                    <div class="stat-item">DEF <span id="enemy-def">5</span></div>
+                    <div class="stat-item">ORO <span id="enemy-reward">10g</span></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="log"><span class="log-system">La batalla esta a punto de comenzar!</span></div>
+
+        <div class="actions">
+            <button class="action-btn" id="btn-attack">ATACAR</button>
+            <button class="action-btn" id="btn-spell">
+                HECHIZO
+                <span class="btn-cost">20 mana</span>
+            </button>
+            <button class="action-btn" id="btn-heal">
+                CURAR
+                <span class="btn-cost">15 mana</span>
+            </button>
+        </div>
+
+        <button id="btn-restart">NUEVA BATALLA</button>
+    </div>
+
+    <div id="result-overlay">
+        <div class="result-box">
+            <h2 id="result-title">Victoria!</h2>
+            <p id="result-desc">Has derrotado al enemigo.</p>
+            <button onclick="closeResult()">CONTINUAR</button>
+        </div>
     </div>
     <script src="./game.js"></script>
 </body>
+
 </html>
